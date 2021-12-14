@@ -1,0 +1,33 @@
+<div class="card">
+    <form  (ngSubmit)="AddProduct()">
+        <div class="card-header text-primary">
+            <h2>{{title}}</h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        
+                        <tr>
+                            <td><label>Product Name</label></td>
+                            <td><input type="text" name="p_name" [(ngModel)]="productItem.productName"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Code</label></td>
+                            <td><input type="text" name="p_code" [(ngModel)]="productItem.productCode"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Date</label></td>
+                            <td><input type="text" name="p_date" [(ngModel)]="productItem.releaseDate"/></td>
+                        </tr>
+                       
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="submit"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

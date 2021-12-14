@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header text-primary">
+       <h2> {{title}}</h2>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th *ngIf="userIsAuthenticated">Update</th>
+                        <th *ngIf="userIsAuthenticated">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productEmail}}</td>
+                        <td>{{product.ProductPassword}}</td>
+
+                        <td *ngIf="userIsAuthenticated"><a [routerLink]="['/update',product._id]"><button type="button" class="btn btn-info"> Update </button> </a>  </td>
+                        <td *ngIf="userIsAuthenticated" > <button type="button" class="btn btn-danger" (click)="onDelete(product._id)"> Delete </button>  </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
